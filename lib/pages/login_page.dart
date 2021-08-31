@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_f1/utils/MyRoutes.dart';
 
 // ignore: camel_case_types
 class loginPage extends StatelessWidget {
@@ -6,7 +7,8 @@ class loginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
         color: Colors.white,
-        child: Column(
+        child: SingleChildScrollView(
+            child: Column(
           children: [
             Image.asset(
               "assets/images/triangle.jpg",
@@ -18,7 +20,7 @@ class loginPage extends StatelessWidget {
             Text(
               "welcome",
               style: TextStyle(
-                fontSize: 24,
+                fontSize: 28,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -48,15 +50,17 @@ class loginPage extends StatelessWidget {
                   ),
                   ElevatedButton(
                     child: Text("Login"),
-                    style: TextButton.styleFrom(),
+                    style: TextButton.styleFrom(
+                      minimumSize: Size(150, 40),
+                    ),
                     onPressed: () {
-                      print("hello world");
+                      Navigator.pushNamed(context, MyRoutes.homeRoute);
                     },
                   ),
                 ],
               ),
             ),
           ],
-        ));
+        )));
   }
 }
