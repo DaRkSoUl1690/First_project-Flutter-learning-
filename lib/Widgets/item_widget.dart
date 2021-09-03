@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_f1/models/Catalog.dart';
 
@@ -11,6 +13,10 @@ class ItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      shape: RoundedRectangleBorder(
+    side: BorderSide(color: Colors.teal),
+    borderRadius: BorderRadius.circular(30),),
+ 
       child: ListTile(
         onTap: () {
           print("${item.name} pressed");
