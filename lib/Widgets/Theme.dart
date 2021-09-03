@@ -14,7 +14,7 @@ class MyTheme {
         //  primaryTextTheme: GoogleFonts.latoTextTheme()
       );
 
-
-      static ThemeData darkTheme(BuildContext context) => ThemeData
-              
+  static ThemeData darkTheme(BuildContext context) => ThemeData(
+        brightness: Brightness.dark,
+      );
 }
