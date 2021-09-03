@@ -28,30 +28,36 @@ class Mydrawer extends StatelessWidget {
               CupertinoIcons.home,
               color: Colors.white,
             ),
-            title: Text("Home ",style: TextStyle(
-               color: Colors.white,
-            ),),
-            
+            title: Text(
+              "Home ",
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
           ),
-           ListTile(
+          ListTile(
             leading: Icon(
               CupertinoIcons.profile_circled,
               color: Colors.white,
             ),
-            title: Text("Profile",style: TextStyle(
-               color: Colors.white,
-            ),),
-            
+            title: Text(
+              "Profile",
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
           ),
-            ListTile(
+          ListTile(
             leading: Icon(
               CupertinoIcons.mail,
               color: Colors.white,
             ),
-            title: Text("E-Mail Me",style: TextStyle(
-               color: Colors.white,
-            ),),
-            
+            title: Text(
+              "E-Mail Me",
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
           )
         ],
       ),
