@@ -41,12 +41,42 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.all(16.0),
           child: (CatalogModel.products != null &&
                   CatalogModel.products.isNotEmpty)
-              ? ListView.builder(
+              ? GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 20,
+                      crossAxisSpacing: 16),
+                  itemBuilder: (context, index) {
+                    final item = CatalogModel.products[index];
+                    return Card(
+                        clipBehavior: Clip.antiAlias,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        child: GridTile(
+                          header: Container(
+                            child: Text(
+                              item.name,
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.deepOrange,
+                            ),
+                            padding: const EdgeInsets.all(12),
+                          ),
+                          child: Image.network(item.image,),
+                          footer: Container(
+                            child: Text(
+                              item.price.toString(),
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.deepOrange,
+                            ),
+                            padding: const EdgeInsets.all(12),
+                          ),
+                        ));
+                  },
                   itemCount: CatalogModel.products.length,
-                  itemBuilder: (context, index) => ItemWidget(
-                      item: CatalogModel.products[index],
-                    ),
-                  
                 )
               : Center(
                   child: CircularProgressIndicator(),
