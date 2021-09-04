@@ -14,9 +14,9 @@ class ItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       shape: RoundedRectangleBorder(
-    side: BorderSide(color: Colors.teal),
-    borderRadius: BorderRadius.circular(30),),
- 
+        side: BorderSide(color: Colors.teal),
+        borderRadius: BorderRadius.circular(30),
+      ),
       child: ListTile(
         onTap: () {
           print("${item.name} pressed");
