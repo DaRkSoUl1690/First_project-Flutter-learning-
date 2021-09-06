@@ -7,7 +7,7 @@ class Item {
   final String image;
 
   Item(
-      { required this.id,
+      {required this.id,
       required this.name,
       required this.desc,
       required this.price,
@@ -36,5 +36,13 @@ class Item {
 }
 
 class CatalogModel {
-  static  List<Item> products = [];
+  static List<Item> products = [];
+
+  // get item by id
+ static Item getById(int id) =>
+      products.firstWhere((element) => element.id == id, orElse: null);
+
+  // get itme by position
+
+ static Item getByPosition(int pos) => products[pos];
 }
