@@ -40,7 +40,7 @@ class Mydrawer extends StatelessWidget {
               CupertinoIcons.profile_circled,
               color: Colors.white,
             ),
-            title: Text( 
+            title: Text(
               "Profile",
               style: TextStyle(
                 color: Colors.white,

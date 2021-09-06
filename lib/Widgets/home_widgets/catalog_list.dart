@@ -26,11 +26,11 @@ class CatalogList extends StatelessWidget {
 }
 
 class catalogItem extends StatelessWidget {
-  final Item catalog;
-
   const catalogItem({Key? key, required this.catalog})
       : assert(catalog != null),
         super(key: key);
+
+  final Item catalog;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +44,7 @@ class catalogItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            catalog.name.text.lg.color(MyTheme.darkbulishColor).make(),
+            catalog.name.text.lg.color(context.accentColor).make(),
             catalog.desc.text.sm.color(Colors.grey).make(),
             10.heightBox,
             ButtonBar(
@@ -56,7 +56,7 @@ class catalogItem extends StatelessWidget {
                     onPressed: () {},
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(
-                          MyTheme.darkbulishColor,
+                         context.theme.buttonColor,
                         ),
                         shape: MaterialStateProperty.all(StadiumBorder())),
                     child: "Add to Cart".text.make())
@@ -65,14 +65,14 @@ class catalogItem extends StatelessWidget {
           ],
         ))
       ],
-    )).white.roundedLg.square(150).make().py16();
+    )).color(context.cardColor).roundedLg.square(150).make().py16();
   }
 }
 
 class catalogImage extends StatelessWidget {
-  final String image;
-
   const catalogImage({Key? key, required this.image}) : super(key: key);
+
+  final String image;
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +80,7 @@ class catalogImage extends StatelessWidget {
         .box
         .rounded
         .p8
-        .color(MyTheme.creamColor)
+        .color(context.canvasColor)
         .make()
         .p16()
         .w32(context);

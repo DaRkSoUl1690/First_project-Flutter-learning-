@@ -11,7 +11,7 @@ import 'package:flutter_f1/Widgets/home_widgets/catalog_list.dart';
 // ignore: unused_import
 import 'package:flutter_f1/Widgets/item_widget.dart';
 import 'package:flutter_f1/models/Catalog.dart';
-import 'package:flutter_f1/pages/cart_page.dart';
+
 import 'package:flutter_f1/utils/MyRoutes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -43,24 +43,30 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MyTheme.creamColor,
-      floatingActionButton: FloatingActionButton(onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
-      child: Icon(CupertinoIcons.cart),),
-        body: SafeArea(
-      child: Container(
-        padding: Vx.m32,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            catalogheader(),
-            if (CatalogModel.products != null &&
-                CatalogModel.products.isNotEmpty)
-              CatalogList().py16().expand()
-            else
-              CircularProgressIndicator().centered().expand()
-          ],
+        backgroundColor: context.canvasColor,
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: context.theme.buttonColor,
+          onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
+          child: Icon(
+            CupertinoIcons.cart,
+            color: Colors.white,
+          ),
         ),
-      ),
-    ));
+        body: SafeArea(
+          child: Container(
+            padding: Vx.m32,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                catalogheader(),
+                if (CatalogModel.products.isNotEmpty &&
+                    CatalogModel.products != null)
+                  CatalogList().py16().expand()
+                else
+                  CircularProgressIndicator().centered().expand()
+              ],
+            ),
+          ),
+        ));
   }
 }

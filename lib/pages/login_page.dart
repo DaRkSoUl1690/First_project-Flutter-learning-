@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_f1/utils/MyRoutes.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 // ignore: camel_case_types
 class loginPage extends StatefulWidget {
@@ -29,7 +30,7 @@ class _loginPageState extends State<loginPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
-        color: Colors.white,
+        color:  context.canvasColor,
         child: SingleChildScrollView(
           child: Form(
             key: _formKey,
@@ -94,7 +95,7 @@ class _loginPageState extends State<loginPage> {
                         height: 40.0,
                       ),
                       Material(
-                        color: Colors.deepPurple,
+                        color: context.theme.buttonColor,
                         borderRadius:
                             BorderRadius.circular(changebutton ? 50 : 8),
                         child: InkWell(
