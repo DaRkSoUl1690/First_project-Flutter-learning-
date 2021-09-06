@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_f1/Widgets/Theme.dart';
 import 'package:flutter_f1/models/Catalog.dart';
+import 'package:flutter_f1/utils/MyRoutes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class home_detail extends StatelessWidget {
@@ -13,7 +14,7 @@ class home_detail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(backgroundColor: Colors.transparent,),
       backgroundColor: MyTheme.creamColor,
       bottomNavigationBar: ButtonBar(
         alignment: MainAxisAlignment.spaceBetween,
@@ -21,7 +22,7 @@ class home_detail extends StatelessWidget {
         children: [
           "\$${Catalog.price}".text.bold.xl4.red800.make(),
           ElevatedButton(
-              onPressed: () {},
+              onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(
                     MyTheme.darkbulishColor,
@@ -48,8 +49,10 @@ class home_detail extends StatelessWidget {
                   children: [
                     Catalog.name.text.xl4.color(MyTheme.darkbulishColor).make(),
                     Catalog.desc.text.xl.color(Colors.grey).make(),
+                    10.heightBox,
+                    "Ipsum est labore et nonumy amet lorem sed, sed dolor sit diam sed, amet ea invidunt dolor invidunt. Tempor amet nonumy invidunt tempor rebum et. Est vero voluptua tempor est dolor dolor rebum, sanctus dolor consetetur ea consetetur magna, dolores ipsum eirmod magna diam, est sit ut labore eirmod sed.".text.xl.color(Colors.grey).make().p16()
                   ],
-                ).py64(),
+                ).py32(),
               ),
             ))
           ],
