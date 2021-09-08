@@ -34,7 +34,10 @@ class cartTotal extends StatelessWidget {
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStateProperty.all(context.theme.buttonColor)),
-                  onPressed: () {},
+                  onPressed: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: "Buying not supported".text.make()));
+                  },
                   child: "BUY".text.white.make())
               .w32(context)
         ],
@@ -59,7 +62,7 @@ class _cartlistState extends State<cartlist> {
               leading: Icon(Icons.done),
               trailing: IconButton(
                   onPressed: () {}, icon: Icon(Icons.remove_circle_outline)),
-                  title:"Item 1".text.make() ,
+              title: "Item 1".text.make(),
             ));
   }
 }

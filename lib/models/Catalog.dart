@@ -39,10 +39,10 @@ class CatalogModel {
   static List<Item> products = [];
 
   // get item by id
- static Item getById(int id) =>
+ Item getById(int id) =>
       products.firstWhere((element) => element.id == id, orElse: null);
 
   // get itme by position
 
- static Item getByPosition(int pos) => products[pos];
+ Item getByPosition(int pos) => products[pos];
 }
