@@ -36,6 +36,14 @@ class Item {
 }
 
 class CatalogModel {
+
+
+ static final _catamodel = CatalogModel._internal();
+
+  CatalogModel._internal();
+
+  factory CatalogModel() => _catamodel;
+
   static List<Item> products = [];
 
   // get item by id
