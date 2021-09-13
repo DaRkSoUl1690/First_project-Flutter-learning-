@@ -58,4 +58,4 @@ class home_detail extends StatelessWidget {
       ),
     );
   }
-}
+}// vedant 
