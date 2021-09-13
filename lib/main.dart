@@ -21,12 +21,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 
       //  darkTheme: MyTheme.darkTheme(context),
-      initialRoute:MyRoutes.homeRoute,
+      initialRoute:MyRoutes.loginRoute,
       routes: {
         "/": (context) => new loginPage(),
         MyRoutes.homeRoute: (context) => HomePage(),
         "/login": (context) => new loginPage(),
-        MyRoutes.cartRoute: (context) => cartPage(),
+        MyRoutes.cartRoute: (context) => CartPage(),
       },
     );
   }
