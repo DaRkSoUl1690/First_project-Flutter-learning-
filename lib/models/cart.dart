@@ -1,11 +1,11 @@
 import 'package:flutter_f1/models/Catalog.dart';
 
 class cartModel {
-  static final _cartModel = cartModel._internal();
+  static final _cartModel1 = cartModel._internal();
 
   cartModel._internal();
 
-  factory cartModel() => cartModel();
+  factory cartModel() => _cartModel1;
 
   late CatalogModel _catalogModel;
   final List<int> _itemids = [];

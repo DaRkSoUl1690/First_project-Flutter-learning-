@@ -50,7 +50,7 @@ class home_detail extends StatelessWidget {
                     10.heightBox,
                     "Ipsum est labore et nonumy amet lorem sed, sed dolor sit diam sed, amet ea invidunt dolor invidunt. Tempor amet nonumy invidunt tempor rebum et. Est vero voluptua tempor est dolor dolor rebum, sanctus dolor consetetur ea consetetur magna, dolores ipsum eirmod magna diam, est sit ut labore eirmod sed.".text.sm.color(Colors.grey).make().p8()
                   ],
-                ).py64(),
+                ).py32(),
               ),
             ))
           ],

@@ -27,7 +27,7 @@ class _addtocartState extends State<addtocart> {
 
             _cart.Catalog = catalog;
             _cart.add(widget.catalog);
-            // setState(() {});
+             setState(() {});
           }
         },
         style: ButtonStyle(
