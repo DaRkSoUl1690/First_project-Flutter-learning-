@@ -1,33 +1,24 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_f1/Core/Store.dart';
 import 'package:flutter_f1/models/Catalog.dart';
 import 'package:flutter_f1/models/cart.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class addtocart extends StatefulWidget {
-  const addtocart({Key? key, required this.catalog}) : super(key: key);
-
-  final Item catalog;
-
-  @override
-  _addtocartState createState() => _addtocartState();
-}
-
-class _addtocartState extends State<addtocart> {
-  final _cart = cartModel();
+class addtocart extends StatelessWidget {
+  final Item cata;
+  addtocart({Key? key, required this.cata}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    bool isincart = _cart.items.contains(widget.catalog) ?? false;
+    VxState.watch(context, on: [AddMutation]);
+    final cartModel _cart = (VxState.store as Mystore).cart1;
+
+    bool isincart = _cart.items.contains(cata);
     return ElevatedButton(
         onPressed: () {
           if (!isincart) {
-            isincart = isincart.toggle();
-            final catalog = CatalogModel();
-
-            _cart.Catalog = catalog;
-            _cart.add(widget.catalog);
-             setState(() {});
+            AddMutation(cata);
           }
         },
         style: ButtonStyle(

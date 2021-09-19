@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_f1/Widgets/Theme.dart';
 import 'package:flutter_f1/utils/MyRoutes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -71,7 +73,7 @@ class _loginPageState extends State<loginPage> {
                           return null;
                         },
                         onChanged: (value) {
-                          Name = value;
+                           Name = value;
                           setState(() {});
                         },
                       ),

@@ -7,8 +7,7 @@ import 'package:velocity_x/velocity_x.dart';
 
 class home_detail extends StatelessWidget {
   const home_detail({Key? key, required this.Catalog})
-      : assert(Catalog != null),
-        super(key: key);
+      : super(key: key);
 
   final Item Catalog;
 
@@ -25,7 +24,7 @@ class home_detail extends StatelessWidget {
           buttonPadding: EdgeInsets.zero,
           children: [
             "\$${Catalog.price}".text.bold.xl4.red800.make(),
-           addtocart(catalog: Catalog).wh(120, 50)
+           addtocart(cata: Catalog).wh(120, 50)
           ],
         ).p32(),
       ),

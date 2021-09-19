@@ -18,10 +18,12 @@ class CatalogList extends StatelessWidget {
       itemBuilder: (context, index) {
         final catalog = CatalogModel.products[index];
         return InkWell(
+          
             onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (builder) => home_detail(Catalog: catalog))),
+                    builder: (builder) => home_detail(Catalog: catalog))
+                    ),
             child: catalogItem(catalog: catalog));
       },
     );
@@ -30,8 +32,7 @@ class CatalogList extends StatelessWidget {
 
 class catalogItem extends StatelessWidget {
   const catalogItem({Key? key, required this.catalog})
-      : assert(catalog != null),
-        super(key: key);
+      : super(key: key);
 
   final Item catalog;
 
@@ -56,7 +57,7 @@ class catalogItem extends StatelessWidget {
               buttonPadding: EdgeInsets.zero,
               children: [
                 "\$${catalog.price}".text.bold.xl.make(),
-                addtocart(catalog: catalog)
+                addtocart(cata: catalog)
               ],
             ).pOnly(right: 8.0)
           ],
